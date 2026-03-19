@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="Description" content="Enter your description here" />
+  <meta name="Description"
+    content="Order delicious food online from your favorite restaurants. Fast delivery and great deals!" />
 
-  <title>Foodies</title>
+  <title>Foodies | Order Delicious Food Online</title>
 
   <!-- bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,7 +18,6 @@
 
   <!-- OWN CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js"></script>
 
 
   <link rel="stylesheet" href="css/responsive-style.css">
@@ -32,39 +32,38 @@
         <a class="navbar-brand" href="#">
           <img src="images/logo.png">
         </a>
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
           aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-stream navbar-toggler-icon"></i>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#home">Home</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="#about">About Us</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="#explore-food">Menu</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="#testimonial">Reviews</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="#faq">FAQ</a>
             </li>
-
             <li>
               <button class="main-btn">9028609403</button>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">
+                Cart (<span id="cartCount">0</span>)
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -78,16 +77,16 @@
         <div class="row">
           <div class="col-lg-5 col-md-6">
             <h1>Good food choices are good investments.</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus a odio finibus bibendum amet leo.
+            <p>
+              Discover delicious, freshly prepared meals made with quality ingredients.
+              Order your favorite food online and enjoy fast delivery at your doorstep.
             </p>
-
             <div class="mt-4">
               <button class="main-btn">
                 Order now <i class="fas fa-shopping-basket ps-3"></i>
               </button>
-
               <button class="white-btn ms-lg-4 mt-lg-0 mt-4">
-                Order now <i class="fas fa-angle-right ps-3"></i>
+                View Menu <i class="fas fa-angle-right ps-3"></i>
               </button>
             </div>
           </div>
@@ -101,35 +100,30 @@
     <section class="counter-section">
       <div class="container">
         <div class="row text-center">
-
           <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
             <h2>
               <span id="count1"></span>+
             </h2>
-            <p>SAVINGS</p>
+            <p>Orders Delivered</p>
           </div>
-
           <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
             <h2>
               <span id="count2"></span>+
             </h2>
-            <p>PHOTOS</p>
+            <p>Happy Customers</p>
           </div>
-
           <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
             <h2>
               <span id="count3"></span>+
             </h2>
-            <p>ROCKETS</p>
+            <p>Menu Items</p>
           </div>
-
           <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
             <h2>
               <span id="count4"></span>+
             </h2>
-            <p>GLOBES</p>
+            <p>Cities Served</p>
           </div>
-
         </div>
       </div>
     </section>
@@ -140,22 +134,21 @@
     <div class="about-section wrapper">
       <div class="container">
         <div class="row align-items-center">
-
           <!-- Image column -->
           <div class="col-lg-7 col-md-12 mb-lg-0 mb-5">
             <div class="card border-0">
               <img src="images/img/img-1.png" class="img-fluid" alt="about image">
             </div>
           </div>
-
           <!-- Text column -->
           <div class="col-lg-5 col-md-12 text-sec">
             <h2>
               We pride ourselves on making real food from the best ingredients.
             </h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus
-              a odio finibus bibendum in sit amet leo. Mauris feugiat erat tellus.
+              At Foodies, we believe in serving fresh, hygienic, and tasty food.
+              Every dish is prepared with care using high-quality ingredients to
+              ensure the best taste and nutrition for our customers.
             </p>
             <button class="main-btn mt-4">Learn More</button>
           </div>
@@ -164,25 +157,21 @@
       <section class="food-type">
         <div class="container">
           <div class="row align-items-center">
-
             <!-- Text -->
             <div class="col-lg-5 col-md-12 text-sec mb-lg-0 mb-5">
               <h2>
                 We make everything by hand with the best possible ingredients.
               </h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus a
-                odio finibus bibendum in sit amet leo. Mauris feugiat erat tellus.
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts.
+                Our menu is crafted by experienced chefs who focus on taste, quality,
+                and presentation. From snacks to full meals, everything is made fresh
+                and served with love.
               </p>
-
               <ul class="list-unstyled py-3">
-                <li>Etiam sed dolor ac diam volutpat.</li>
-                <li>Erat volutpat aliquet imperdiet.</li>
-                <li>Purus a odio finibus bibendum.</li>
+                <li>Freshly prepared meals</li>
+                <li>Affordable pricing</li>
+                <li>Fast delivery service</li>
               </ul>
-
               <button class="main-btn mt-4">Learn More</button>
             </div>
 
@@ -192,11 +181,9 @@
                 <img src="images/img/img-2.png" class="img-fluid" alt="food">
               </div>
             </div>
-
           </div>
         </div>
       </section>
-
     </div>
   </section>
 
@@ -211,8 +198,8 @@
                 When a man's stomach is full it makes no difference whether he is rich or poor.
               </h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus a odio
-                finibus bibendum in sit amet leo. Mauris feugiat erat tellus.
+                Good food brings people together. Whether you're ordering for yourself
+                or your family, we ensure every bite gives you satisfaction and happiness.
               </p>
               <button class="main-btn mt-3">Read More</button>
             </div>
@@ -221,7 +208,6 @@
       </div>
     </div>
   </section>
-
   <!-- section explore food -->
   <section id="explore-food">
     <div class="explore-food wrapper">
@@ -232,17 +218,13 @@
             <div class="text-content text-center">
               <h2>Explore Our Foods</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus a odio
-                finibus bibendum in sit amet leo. Mauris feugiat erat tellus. Far far away,
-                behind the word mountains, far from the countries Vokalia and Consonantia,
-                there live the blind texts. Separated they live in Bookmarksgrove.
+                Explore our wide range of delicious dishes including sandwiches, burgers,
+                and desserts. Each item is prepared fresh and designed to satisfy your cravings.
               </p>
             </div>
           </div>
         </div>
-
         <div class="row pt-5">
-
           <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
             <div class="card">
               <img src="images/img/img-3.jpg" class="img-fluid">
@@ -254,7 +236,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
             <div class="card">
               <img src="images/img/img-4.jpg" class="img-fluid">
@@ -266,7 +247,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
             <div class="card">
               <img src="images/img/img-5.jpg" class="img-fluid">
@@ -278,9 +258,7 @@
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
   </section>
@@ -308,8 +286,7 @@
                   <div class="carousel-caption">
                     <img src="images/review/review-1.jpg">
                     <p>
-                      "Far far away, behind the word mountains, far from the countries Vokalia
-                      and Consonantia, there live the blind texts."
+                      "Amazing taste and quick delivery. Totally worth it!"
                     </p>
                     <h5>John cena - UX Designer</h5>
                   </div>
@@ -318,8 +295,7 @@
                   <div class="carousel-caption">
                     <img src="images/review/review-2.jpg">
                     <p>
-                      "Far far away, behind the word mountains, far from the countries Vokalia
-                      and Consonantia, there live the blind texts."
+                      "Fresh food and great service. Will definitely order again."
                     </p>
                     <h5>aishwarya rai </h5>
                   </div>
@@ -328,8 +304,7 @@
                   <div class="carousel-caption">
                     <img src="images/review/review-1.jpg">
                     <p>
-                      "Far far away, behind the word mountains, far from the countries Vokalia
-                      and Consonantia, there live the blind texts."
+                      "Best food ordering experience I’ve had so far. Highly recommended."
                     </p>
                     <h5>salman khan</h5>
                   </div>
@@ -346,7 +321,6 @@
   <section id="faq">
     <div class="faq wrapper">
       <div class="container">
-
         <div class="row">
           <div class="col-sm-12">
             <div class="text-center pb-4">
@@ -354,47 +328,40 @@
             </div>
           </div>
         </div>
-
         <div class="row pt-5">
-
           <div class="col-sm-6 mb-4">
             <h4><span>~</span> Is Foodies Bread really baked fresh each day?</h4>
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated they
-              live in Bookmarksgrove right at the coast of the Semantics, a large language.
+            
+              Yes, all our food items are freshly prepared daily to ensure the best taste and quality.
+            
             </p>
           </div>
-
           <div class="col-sm-6 mb-4">
             <h4><span>~</span> Do you bake breads containing animal fats or products?</h4>
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated they
-              live in Bookmarksgrove right at the coast of the Semantics, a large language.
+            
+              No, we only use vegetarian and hygienic ingredients in our food preparation.
             </p>
+            
           </div>
-
           <div class="col-sm-6 mb-4">
             <h4><span>~</span> Can I order your products online?</h4>
+            
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated they
-              live in Bookmarksgrove right at the coast of the Semantics, a large language.
+              Yes, you can easily place your order through our website and track it in real-time.
             </p>
+            
           </div>
-
           <div class="col-sm-6 mb-4">
             <h4><span>~</span> When are you opening a shop near me?</h4>
+            
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated they
-              live in Bookmarksgrove right at the coast of the Semantics, a large language.
+              We are expanding soon! Stay connected for updates on new locations.
             </p>
+            
           </div>
-
         </div>
-
       </div>
     </div>
   </section>
@@ -423,9 +390,10 @@
           <div class="col-sm-12">
             <div class="text-content text-center pb-4">
               <h2>Hurry up! Subscribe our newsletter and get 25% Off</h2>
-              <p>Limited time offer for this month. No credit card required.</p>
+              <p>
+                Subscribe to get updates on new dishes, offers, and discounts.
+              </p>
             </div>
-
             <form class="newsletter">
               <div class="row">
                 <div class="col-md-8 col-12">
@@ -436,7 +404,6 @@
                 </div>
               </div>
             </form>
-
           </div>
         </div>
       </div>
@@ -454,26 +421,27 @@
             <a class="footer-link" href="#">Affiliate</a>
             <a class="footer-link" href="#">FAQ</a>
             <div class="footer-social pt-4 text-center">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-              <a href="#"><i class="fab fa-dribbble"></i></a>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
+              <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
+              <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+              <a href="https://github.com/ompatil7181"><i class="fab fa-github"></i></a>
+              <a href="http://wa.me/+919028609403"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://www.instagram.com/omkar_patil7181/"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/omkar-patil-46b256299/"><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
           <div class="col-sm-12">
             <div class="footer-copy">
               <div class="copy-right text-center pt-5">
-                <p class="text-light">© Foodies. All rights reserved.</p>
+                <p class="text-light">© 2026 Foodies | Developed by Omkar</p>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </footer>
+  <script src="js/main.js"></script>
+
 </body>
 
 </html>

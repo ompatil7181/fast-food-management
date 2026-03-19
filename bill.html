@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bill - Foodies</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container" style="margin-top:100px;">
+  <h2>🧾 Order Bill</h2>
+
+  <p><b>Email:</b> <span id="email"></span></p>
+  <p><b>Date:</b> <span id="date"></span></p>
+
+  <hr>
+
+  <div id="items"></div>
+
+  <hr>
+
+  <h3 id="total"></h3>
+</div>
+
+<script>
+const order = JSON.parse(localStorage.getItem("lastOrder"));
+
+document.getElementById("email").innerText = order.email;
+document.getElementById("date").innerText = new Date().toLocaleString();
+
+let html = "";
+order.items.forEach(item => {
+  html += `<p>${item.name} - ₹${item.price} x ${item.qty}</p>`;
+});
+
+document.getElementById("items").innerHTML = html;
+document.getElementById("total").innerText = "Total: ₹" + order.total;
+</script>
+
+</body>
+</html>

@@ -54,3 +54,73 @@ document.addEventListener("DOMContentLoaded", () => {
     counter("count3", 0, 1440, 3000);
     counter("count4", 0, 7110, 3000);
 });
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+// Add to cart
+function updateCartCount() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let count = cart.reduce((sum, item) => sum + item.qty, 0);
+  document.getElementById("cartCount").innerText = count;
+}
+
+document.querySelectorAll("#explore-food .main-btn").forEach(btn => {
+  btn.addEventListener("click", function () {
+    const card = this.closest(".card");
+
+    const name = card.querySelector("h4").innerText;
+    const price = parseInt(card.querySelector("span").innerText.replace("₹", ""));
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existing = cart.find(item => item.name === name);
+
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+
+    alert("Added to cart 🛒");
+  });
+});
+
+updateCartCount();
+
+  
+
+
+
+// Place Order
+// function placeOrder() {
+//   const email = localStorage.getItem("userEmail");
+
+//   if (!email) {
+//     alert("Please login first");
+//     window.location.href = "login.html";
+//     return;
+//   }
+
+//   // 🔥 ALWAYS GET FRESH CART
+//   let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+//   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+//   fetch("http://localhost:5000/order", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({
+//       email,
+//       items: cart,
+//       total,
+//     }),
+//   })
+//     .then((res) => res.json())
+//     .then(() => {
+//       alert("Order placed!");
+//       localStorage.removeItem("cart"); // 🔥 important
+//     });
+// }
