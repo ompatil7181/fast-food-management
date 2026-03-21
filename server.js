@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ MongoDB connect
+// MongoDB connect
 mongoose.connect("mongodb+srv://admin-omkar:9028609403@cluster0.htlkaku.mongodb.net/foodies")
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.log(err));
@@ -27,7 +27,7 @@ const Order = mongoose.model("Order", {
 
 // ================= ROUTES =================
 
-// ✅ Register
+// Register
 app.post("/register", async (req, res) => {
   const { email, password } = req.body;
 
@@ -40,7 +40,7 @@ app.post("/register", async (req, res) => {
   res.json({ message: "Registered successfully" });
 });
 
-// ✅ Login
+// Login
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
@@ -53,7 +53,7 @@ app.post("/login", async (req, res) => {
   res.json({ message: "Login success", email });
 });
 
-// ✅ Place Order
+// Place Order
 app.post("/order", async (req, res) => {
   try {
     const { email, items, total } = req.body;
@@ -72,13 +72,13 @@ app.post("/order", async (req, res) => {
   }
 });
 
-// ✅ Get Orders
+// Get Orders
 app.get("/orders", async (req, res) => {
   const orders = await Order.find().sort({ date: -1 });
   res.json(orders);
 });
 
-// ✅ Get Users
+// Get Users
 app.get("/users", async (req, res) => {
   const users = await User.find();
   res.json(users);
