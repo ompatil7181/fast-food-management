@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart - Foodies</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive-style.css">
+</head>
+
+<body>
+
+<nav class="navbar navigation-wrap">
+  <div class="container">
+    <h2>🛒 Your Cart</h2>
+  </div>
+</nav>
+
+<section class="explore-food wrapper">
+  <div class="container">
+
+    <div class="row" id="cartItems"></div>
+
+    <div class="text-center mt-5">
+      <h3 id="total"></h3>
+      <button onclick="placeOrder()" class="main-btn mt-3">
+        Place Order
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function loadCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let html = "";
+  let total = 0;
+
+  if (cart.length === 0) {
+    html = "<h3>Your cart is empty 😢</h3>";
+  }
+
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+
+    html += `
+      <div class="col-lg-4 col-md-6 mb-5">
+        <div class="card text-center p-3">
+          <h4>${item.name}</h4>
+          <span>₹${item.price}</span>
+
+          <div style="margin-top:10px;">
+            <button onclick="changeQty(${index}, -1)">-</button>
+            <span style="margin:0 10px;">${item.qty}</span>
+            <button onclick="changeQty(${index}, 1)">+</button>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  document.getElementById("cartItems").innerHTML = html;
+  document.getElementById("total").innerText = "Total Amount: ₹" + total;
+}
+
+function changeQty(index, change) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart[index].qty += change;
+
+  if (cart[index].qty <= 0) {
+    cart.splice(index, 1);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCart();
+}
+
+function placeOrder() {
+  const email = localStorage.getItem("userEmail");
+
+  if (!email) {
+    alert("Login first");
+    window.location.href = "login.html";
+    return;
+  }
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    alert("Cart empty");
+    return;
+  }
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+  fetch("http://localhost:5000/order", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ email, items: cart, total }),
+  })
+  .then(res => {
+    if (!res.ok) throw new Error("Order failed");
+    return res.json();
+  })
+  .then(() => {
+    localStorage.setItem("lastOrder", JSON.stringify({ email, items: cart, total }));
+    localStorage.removeItem("cart");
+    window.location.href = "bill.html";
+  })
+  .catch(() => alert("Order failed"));
+}
+
+
+loadCart();
+</script>
+
+</body>
+</html>
